@@ -1,37 +1,45 @@
-discuss.
+# Args
 
-## Flow
+## Compiler
 
-### Compiler
+```sh
+voke -sc *
+     --sync-compiler *
+```
 
-`voke -sc *`  
-`     --sync-compiler *`
+Install a compiler.
 
-Install a compiler, for example MinGW32-x86_64:
-`voke -Sc mingw64`  
-`     --sync-compiler mingw64`
+## Sync
 
-### Sync
-
-`voke -s *`  
-`     --sync *`
+```sh
+voke -s *
+     --sync *
+```
 
 Sync a library, it will search for the library under `voke-libraries` repository.  
 This installs or update.
 
-Custom options:
+### Options
 
-| - | `voke -s * -b *`    install directly the binary.  
-      `          --bin *`  
+```sh
+voke -s * -b *  
+          --binary *  
+```
 
-| - | `voke -s * -v *`        install a specified version.  
-      `          --version *`
+Install using the binary.
 
-### Sync-Upgrade
+```sh
+voke -s * -v *
+          --version *
+```
 
-`voke`
-`     -su`
-`     --sync-upgrade`
+Install with a specified version.
 
+## Sync-Upgrade
+
+```sh
+voke -su
+     --sync-upgrade
+```
 
 Sync and upgrade ALL libraries current installed, this will ask for updagrade all latest libraries.
