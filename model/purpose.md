@@ -58,6 +58,6 @@ Each folder is a library, in each folder:
 
 `voke` will fetch all branches and update the libraries template, then, check if installed libraries contains a new version, if needed [upgrade](./args.md#sync-upgrade).
 
-When [installing](./args.md#sync) an unique library, `voke` will check if can download from an binary and extract the binary or download the source for compile with the toolchain.
+When [installing](./args.md#sync) an unique library, `voke` will check if can download a release with the binary or download the source for compile later with all the compile-template.
 
 With the binary located and headers located, `voke` will copy for all supported compilers, and the`.cmake`.
