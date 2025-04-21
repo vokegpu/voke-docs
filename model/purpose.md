@@ -60,4 +60,4 @@ Each folder is a library, in each folder:
 
 When [installing](./args.md#sync) an unique library, `voke` will check if can download a release with the binary or download the source for compile later with all the compile-template.
 
-With the binary located and headers located, `voke` will copy for all supported compilers, and the`.cmake`.
+With the binary and headers located, `voke` will copy to `include/` and `bin/` for all supported installed compilers.
