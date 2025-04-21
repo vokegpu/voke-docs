@@ -38,7 +38,8 @@ Install with a specified version.
 ## Sync-Upgrade
 
 ```sh
-voke -su
+voke
+     -su
      --sync-upgrade
 ```
 
