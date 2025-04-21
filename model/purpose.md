@@ -53,3 +53,6 @@ Each folder is a library, in each folder:
 ```
 .voke
 ```
+
+### Installing
+
