@@ -16,17 +16,14 @@ I mean, yeah, there is, I know, but I will not use, because it does not what I w
 
 A global format to define compile definitions, CMake provides one by default, but we need create an own.
 ```
-# .voke
-type: "library"
+# compiler.voke
+type: "library|compiler"
 url: "https://github.com/owner/library"
-binary: [mingw: "regex", "win-clang": "regex", "unix-clang": "regex", etc]
-cmake: "./"
-mkfiletype: "Ninja"
-excludecompiler: ["mingw", "emscripten"]
-dargs: "-D CUSTOM=1"
-src: "./src"
-include: "./include"
-output: "./build/lib/win32"
+cmake: "path/to/cmake-dir"
+toolchain: "Ninja|MinGW Makefiles|etc"
+dargs: "-D CUSTOM=1|etc"
+include-dirs: ["path/to/library/include"]
+binary-dirs: [win32: "path/to/binary-win32", win64: "path/to/binary-win64"]
 ```
 
 You do not need to define this, but it is defined like this by default:
