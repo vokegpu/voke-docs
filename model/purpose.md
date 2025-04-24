@@ -12,26 +12,45 @@ I mean, yeah, there is, I know, but I will not use, because it does not what I w
 
 `voke` is a C++/C library-manager, `voke` should replace the usage of stupid hand-downloading and library installation. On Linux all local libraries install on `/usr/local/share` if CMake is used, so we can easily add packages on any compiler. `voke` does this, compile if needed (or share bin) and install on all compilers path.
 
-### Compiler Definitions Template
+### Library
 
 A global format to define compile definitions, CMake provides one by default, but we need create an own.
-```
+```voke
 # compiler.voke
-type: "library|compiler"
-url: "https://github.com/owner/library"
-cmake: "path/to/cmake-dir"
-toolchain: "Ninja|MinGW Makefiles|etc"
-dargs: "-D CUSTOM=1|etc"
-include-dirs: ["path/to/library/include"]
-binary-dirs: [win32: "path/to/binary-win32", win64: "path/to/binary-win64"]
+--type                 the type of descriptor: library|compiler
+
+--tag                  a tag
+
+--url                  any git repository url
+
+--cmake-dir            where CMakeLists is
+
+--generator            the makefile ogenerator: Ninja|Unix Makefiles|etc
+
+--include-dirs         where public headers dirs are: path/to/dir1 path/to/dir2; may some libraries contains multi-dirs
+
+--binary-win-32-dirs   where linux binary dirs are: path/to/dir1 path/to/dir2
+--binary-win-64-dirs   
+
+--binary-linux-64-dirs where windows binary dirs are: path/to/dir1 path/to/dir2
+--binary-linux-32-dirs 
 ```
 
-You do not need to define this, but it is defined like this by default:
-```
-run: ["cmake -S $cmake -B ./cmake-build -G $mkfiletype $dargs", "cmake --build ./cmake-build"]
-```
+This way we can compile any library/compiler.
 
-This way we can compile any library.
+### Compiler
+
+(?)
+
+### Installed Compiler
+
+Installed compilers are tracked in `installed-compilers.voke` file under voke system dir, each line describe a compiler.
+
+```voke
+# installed-compilers.voke                                                                  
+--name clang --binary-dir /usr/bin --lib-dir /lib64 --include-dir /usr/include --c clang, --cpp clang++ --version 19.1.7
+--name gnu --binary-dir /usr/bin  --lib-dir /lib64 --include-dir /usr/include --c gcc --cpp g++ --version 14.2.7 20250207
+``` 
 
 ### Hosting
 
