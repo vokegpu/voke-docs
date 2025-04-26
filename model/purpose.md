@@ -23,6 +23,8 @@ A global format to define compile definitions, CMake provides one by default, bu
 
 --url                  any git repository url
 
+--git-clone-args       useful for large commits history
+
 --cmake-dir            where CMakeLists is
 
 --generator            the makefile ogenerator: Ninja|Unix Makefiles|etc
@@ -48,9 +50,18 @@ Installed compilers are tracked in `installed-compilers.voke` file under voke sy
 
 ```voke
 # installed-compilers.voke                                                                  
---name clang --binary-dir /usr/bin --lib-dir /lib64 --include-dir /usr/include --c clang, --cpp clang++ --version 19.1.7
---name gnu --binary-dir /usr/bin  --lib-dir /lib64 --include-dir /usr/include --c gcc --cpp g++ --version 14.2.7 20250207
-``` 
+--tag clang --version 19.1.7 --binary-dir /usr/bin --lib-dir /lib64 --include-dir /usr/include --c clang, --cpp clang++ 
+--tag gnu --version 14.2.7 20250207 --binary-dir /usr/bin  --lib-dir /lib64 --include-dir /usr/include --c gcc --cpp g++
+```
+
+### Installed Library
+
+Installed libraries are tracked in `installed-libraries.voke` file under voke system diur, each line describe a library:
+
+```voke
+# installed-libraries.voke
+--tag libekg --version 2.0.0 --libs /lib64/libekg.a --includes /usr/include/ekg --compiler clang --type cpp --arch 64
+```
 
 ### Hosting
 
