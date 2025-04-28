@@ -19,6 +19,8 @@ A global format to define compile definitions, CMake provides one by default, bu
 # compiler.voke
 --type                 the type of descriptor: library|compiler
 
+--build-system         specify build-system: cmake etc
+
 --target               compiler target, note: EKG tag, as example: clang-msvc64 clang-mingw64 clang64 gnu
 
 --tag                  a tag
@@ -38,8 +40,11 @@ A global format to define compile definitions, CMake provides one by default, bu
 --run                  the command for building the project, runs on project dir
                        all wildcards:
                         - $dir project directory
-                        - $c   C compiler target
-                        - $cpp C++ compiler target
+                        - $c                C compiler target
+                        - $cpp              C++ compiler target
+                        - $cmake-build-dir  where CMake put generated makefiles, controlled by voke
+
+
 ```
 
 This way we can compile any library/compiler.
