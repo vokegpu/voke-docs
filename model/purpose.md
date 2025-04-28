@@ -19,15 +19,13 @@ A global format to define compile definitions, CMake provides one by default, bu
 # compiler.voke
 --type                 the type of descriptor: library|compiler
 
+--target               compiler target, note: EKG tag, as example: clang-msvc64 clang-mingw64 clang64 gnu
+
 --tag                  a tag
 
 --url                  any git repository url
 
 --git-clone-args       useful for large commits history
-
---cmake-dir            where CMakeLists is
-
---generator            the makefile ogenerator: Ninja|Unix Makefiles|etc
 
 --include-dirs         where public headers dirs are: path/to/dir1 path/to/dir2; may some libraries contains multi-dirs
 
@@ -35,7 +33,13 @@ A global format to define compile definitions, CMake provides one by default, bu
 --binary-win-64-dirs   
 
 --binary-linux-64-dirs where windows binary dirs are: path/to/dir1 path/to/dir2
---binary-linux-32-dirs 
+--binary-linux-32-dirs
+
+--run                  the command for building the project, runs on project dir
+                       all wildcards:
+                        - $dir project directory
+                        - $c   C compiler target
+                        - $cpp C++ compiler target
 ```
 
 This way we can compile any library/compiler.
