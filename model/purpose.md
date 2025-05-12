@@ -17,29 +17,23 @@ I mean, yeah, there is, I know, but I will not use, because it does not what I w
 A global format to define compile definitions, CMake provides one by default, but we need create an own.
 ```voke
 # compiler.voke
---type                 the type of descriptor: library|compiler
-
---build-system         specify build-system: cmake etc
-
---target               compiler target, note: EKG tag, as example: clang-msvc64 clang-mingw64 clang64 gnu
-
 --tag                  a tag
 
 --url                  any git repository url
 
 --git-clone-args       useful for large commits history
 
---include-dirs         where public headers dirs are: path/to/dir1 path/to/dir2; may some libraries contains multi-dirs
+--build-system         specify build-system: cmake etc
 
---binary-win-32-dirs   where linux binary dirs are: path/to/dir1 path/to/dir2
---binary-win-64-dirs   
+--headers              where public headers file are: path/to/header.hpp path/to/header2.hpp; note they are added under `include-target-dir`
+--headers-dirs         where public headers dirs are: path/to/headers path/to/headers2; note they are added under `include-target-dir`
 
---binary-linux-64-dirs where windows binary dirs are: path/to/dir1 path/to/dir2
---binary-linux-32-dirs
+--binaries "--target gnu32 gnu64 clang32 clang64 --dirs dir/to/lib --files path/to/lib.a"
+--binaries "--target clang-msvc32 clang-msvc64 mingw32 mingw64 --dirs dir/to/lib --files path/to/lib.a"
 
 --run                  the command for building the project, runs on project dir
                        all wildcards:
-                        - $dir project directory
+                        - $dir              project directory
                         - $c                C compiler target
                         - $cpp              C++ compiler target
                         - $cmake-build-dir  where CMake put generated makefiles, controlled by voke
