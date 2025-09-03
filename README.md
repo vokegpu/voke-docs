@@ -1,14 +1,17 @@
-# voke
+# Voke
 
-The official docs and technical details of `voke` C/C++ library-manager.
+Voke is a C/C++ library-manager free-software solution primary for Windows OS, secondary for Linux.
 
-VokeGpu going to do `voke` as open-source soon.
+## Preface
 
-## Model
+The official docs and technical details of Voke.
 
-All topics about the `voke` model, include purpose of writing this project.
+## Usage
 
-| - | [Purpose](./model/purpose.md).  
-| - | [Args](./model/args.md).
+~meow to be wrrrrite
+
+## Voke Technical Details
+
+| - | [Specifications](./model/SPECIFICATIONS.md).  
 
 @vokegpu
