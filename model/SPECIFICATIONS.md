@@ -22,11 +22,17 @@ The default compilers installation dir under `<documents>/cxx/` can be changed l
 
 So if user set a different dir under other disk, the OS can interact with PATH this disk when running voke software.
 
-#### Security
+### Linux
+
+#### Environment
+
+For Linux you can not change the default compilers dir, we use the native Linux dirs (`/usr/*`). The configure file and cache-dir is set under `~/.local/voke/`, you also, can not change this.
+
+### Security
 
 ~
 
-#### Software
+### Software
 
 To reduce external libraries to zero. Except for std. A specialized description-language should be written for Voke, named `vklang`. Which will be used internally in Voke for process of storing per-library, per-compiler stuff.
 
